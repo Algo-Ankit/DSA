@@ -1,12 +1,17 @@
 @echo off
-:: Commit and push ONLY the DSA folder to GitHub
-
 cd /d %~dp0
 
-set /p msg="Enter commit message: "
+REM Stage all changes
+git add .
 
-git add DSA
-git commit -m "%msg%"
-git push origin main
+REM Commit with timestamp
+set datetime=%date% %time%
+git commit -m "Auto-commit on %datetime%"
+
+REM Detect branch (main or master)
+for /f "delims=" %%b in ('git symbolic-ref --short HEAD') do set branch=%%b
+
+REM Push to GitHub
+git push origin %branch%
 
 pause
