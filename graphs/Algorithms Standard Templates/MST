@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int spanningtree(int v, vector<vector<pair<int, int>>> adj) {
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+    vector<int> vis(v,0);
+    int sum=0;
+    pq.push({0,0}); // {weight, node}
+    while(!pq.empty()){
+        auto[wt,node]=pq.top();
+        pq.pop();
+        if(vis[node]) continue; // If already visited, skip
+        vis[node]=1; // Mark node as visited
+        sum+=wt; // Add weight to the sum
+        for(auto it:adj[node]){
+            int adjnode = it.first; // Adjacent node
+            int edgewt = it.second; // Weight of the edge
+            if(!vis[adjnode]) pq.push({edgewt, adjnode}); // Push to priority queue if not visited
+        }
+    }
+    return sum; // Return the total weight of the MST
+}
+
+int main(){
+
+}

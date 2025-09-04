@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "vector": "cpp",
+    "ostream": "cpp",
+    "string": "cpp",
+    "format": "cpp",
+    "mst": "cpp"
+  },
+  "git.ignoreLimitWarning": true
+}
