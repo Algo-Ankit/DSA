@@ -26,7 +26,7 @@ signed main(){
 
     //Prefix sum array-> checking both conditions array and storing 1 in the index 
     for(int i=1;i<N;i++)
-        prefix[i]=(isPrime[i]&&isType[i] : 1 ? 0);
+        prefix[i] = (isPrime[i] && isType[i]) ? 1 : 0;
     //Adding the 1's counted satisfying both conditions
     for(int i=0;i<N;i++)
         prefix[i] += prefix[i-1];
