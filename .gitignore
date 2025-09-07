@@ -1,0 +1,22 @@
+# CLion/IDEA
+.idea/
+
+# VS Code
+.vscode/
+
+# CMake build system
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+
+# Build outputs
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# Logs
+*.log
