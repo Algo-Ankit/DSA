@@ -54,5 +54,5 @@ struct Trie{
 };
 
 int main() {
-
+    
 }
